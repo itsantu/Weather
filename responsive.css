@@ -1,56 +1,74 @@
-@media screen and (max-width: 1024px){
-    #main{
+@media screen and (max-width: 1024px) {
+    #main {
         height: 95%;
         width: 98%;
     }
+
     /* Left Section  */
-    #left{
+    #left {
         width: 40%;
     }
-    #left hr{
+
+    #left hr {
         margin-top: 50px;
     }
-    .search-container input{
+
+    .search-container input {
         font-size: 14px;
         padding: 10px 12px;
         height: 45px;
     }
-    .search-container button{
+
+    .search-container button {
         width: 45px;
         height: 45px;
     }
-    .search-container img{
+
+    .search-container img {
         width: 15px;
     }
-    .city{
-        margin-top:40px;
+
+    .city {
+        margin-top: 40px;
     }
-    
+
     /* Right Section  */
-    #right{
+    #right {
         width: 60%;
         padding: 60px 0;
         gap: 15px;
     }
-    .details-container{
-        width: 40%;
-        height: 140px;
+
+    .details-container {
+        /* width: 40%; */
+        height: 130px;
         padding: 25px 25px;
     }
-    .details-container  p{
-        font-size: 15px;
+
+    .details-container p {
+        font-size: 13px;
     }
-    .details-container h3{
+
+    .details-container h3 {
         margin-top: 15px;
-        font-size: 25px;
+        font-size: 20px;
     }
+
+    .min-max-desc {
+        margin-top: 10px;
+    }
+
+    /* #right-footer{
+        display: block;
+    } */
 }
 
-@media screen and (max-width: 992px){
-    body{
+@media screen and (max-width: 992px) {
+    body {
         background-color: white;
     }
-    #main{
+
+    #main {
         width: 100%;
         height: 100%;
         margin: 0;
@@ -61,25 +79,70 @@
         box-shadow: none;
         overflow: scroll;
     }
-    .search-container{
+
+    /* .search-container{
+        width: 100%;
         margin: 0;
-    }
-    #left{
+    } */
+    #left {
         width: 100%;
         padding-bottom: 30px;
     }
-    #right{
+
+    #right {
+        /* position: static; */
         padding: 30px 0;
         width: 100%;
     }
-}
 
-@media screen and (max-width: 600px){
-    .weather-icon{
-        width: 180px;
-    }
-    .details-container{
-        width: 90%;
+    #right-footer {
+        position: static;
+        transform: none;
         margin-top: 20px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .weather-icon {
+        margin: 50px 0;
+        width: 170px;
+    }
+
+    .temp {
+        margin: 20px 0 0;
+    }
+
+    .city {
+        margin: 45px 0;
+    }
+
+    #right {
+        position: static;
+        padding: 20px 0;
+    }
+    .empty{
+        height: 100px;
+        width: 100px;
+    }
+    .details-container {
+        width: 90%;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    }
+
+    .details-container p {
+        font-size: 18px;
+    }
+
+    .details-container h3,
+    .sun {
+        margin-top: 0;
+    }
+
+    .min-max-desc {
+        text-align: right;
+    }
+}   

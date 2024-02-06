@@ -37,14 +37,16 @@ html {
 }
 
 #right{
+    position: relative;
     width: 65%;
     height: 100%;
     background-color: #efefef;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;    
+    /* align-items: center;     */
+    text-align: left;
+    /* gap: 20px;     */
 }
 
 /* Search Section  */
@@ -63,11 +65,11 @@ html {
     padding: 8px 20px;
     border-radius: 30px;
     height: 55px;
-    flex: 1;
+    flex: 1;    
     margin-right: 16px;
     font-size: 15px;
-    background-color: #edededd2;
-    transition: all 0.4s ease-in-out;
+    background-color: #dcdcdc;
+    transition: all 0.3s ease-in-out;
 }
 .search-container input:focus{
     border: 1px solid #318CE7;
@@ -80,8 +82,8 @@ html {
     width: 55px;
     height: 55px;
     cursor: pointer;
+    background-color: #e1e1e1;   
 }
-
 .search-container img{
     width: 20px;
 }
@@ -115,18 +117,46 @@ html {
 }
 
 
-                                        /*  Right Section  */
+/*          RIGHT SECION        */
+
+#right-middle{
+    height: 70%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .details-container{
     width: 30%;
-    height: 180px;
-    background: #318CE7;
-    padding: 30px 30px;
+    height: 150px;
+    background: #318ce7;
+    padding: 20px 30px;
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 15px;
+    transition: all ease .4s;
+}
+.details-container:hover{      
+    background: #3b9af8;  
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .details-container  p{
-    font-size: 18px;
+    font-size: 16px;
+}
+#right > h2,
+#right-footer  p{
+    color: #212121d8;
+}
+#right-footer  p{
+    font-weight: 500;
+}
+#right > h2{
+    padding-left: 50px;
+    font-size: 40px;
+    font-weight: 400;
 }
 
 .details-container h3{
@@ -157,4 +187,19 @@ html {
 }
 .min-max-desc img{
     width: 20px;
+}
+
+#right-footer{
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#right-footer img{
+    width: 20px;
+    margin: 0 10px;
 }

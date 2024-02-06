@@ -11,10 +11,12 @@ async function checkWeather(city) {
     var data = await response.json()
 
     if (data.cod === '404') {
-        alert('Enter correct Cityname!')
+        // alert('Enter correct Cityname!')
+        document.querySelector('.city').innerHTML = 'Enter a valid City!'
         return
     } else if (data.cod === '400') {
-        alert('Enter a Cityname First!')
+        // alert('Enter a Cityname First!')
+        document.querySelector('.city').innerHTML = 'Enter a Cityname first!'
         return
     } else {
         console.log(data)
@@ -48,7 +50,7 @@ async function checkWeather(city) {
         console.log(hours)
         if (hours >= 6 && hours <= 18) {
             // Day Case 
-            if (data.weather[0].main == 'Clouds') {
+            if (data.weather[0].main == 'Clouds' || data.weather[0].main == 'Haze') {
                 weatherIcon.src = 'images/clouds.png'
             }
             else if (data.weather[0].main == 'Smoke') {

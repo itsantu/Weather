@@ -1,0 +1,85 @@
+@media screen and (max-width: 1024px){
+    #main{
+        height: 95%;
+        width: 98%;
+    }
+    /* Left Section  */
+    #left{
+        width: 40%;
+    }
+    #left hr{
+        margin-top: 50px;
+    }
+    .search-container input{
+        font-size: 14px;
+        padding: 10px 12px;
+        height: 45px;
+    }
+    .search-container button{
+        width: 45px;
+        height: 45px;
+    }
+    .search-container img{
+        width: 15px;
+    }
+    .city{
+        margin-top:40px;
+    }
+    
+    /* Right Section  */
+    #right{
+        width: 60%;
+        padding: 60px 0;
+        gap: 15px;
+    }
+    .details-container{
+        width: 40%;
+        height: 140px;
+        padding: 25px 25px;
+    }
+    .details-container  p{
+        font-size: 15px;
+    }
+    .details-container h3{
+        margin-top: 15px;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    body{
+        background-color: white;
+    }
+    #main{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        /* height: 100%; */
+        flex-direction: column;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: scroll;
+    }
+    .search-container{
+        margin: 0;
+    }
+    #left{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    #right{
+        padding: 30px 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .weather-icon{
+        width: 180px;
+    }
+    .details-container{
+        width: 90%;
+        margin-top: 20px;
+    }
+}

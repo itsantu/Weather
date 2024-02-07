@@ -7,7 +7,9 @@ const searhImg = document.querySelector('.search-container button img')
 const weatherIcon = document.querySelector('.weather-icon')
 
 async function checkWeather(city) {
-    const response = await fetch(apiUrl + city.trim() + `&appid=${apiKey}`)
+    // removes whitespaces and special characters from the city name
+    city = city.replace(/[^a-zA-Z0-9\s]/g, '').trim();
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
     var data = await response.json()
 
     if (data.cod === '404') {

@@ -7,7 +7,7 @@ const searhImg = document.querySelector('.search-container button img')
 const weatherIcon = document.querySelector('.weather-icon')
 
 async function checkWeather(city) {
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
+    const response = await fetch(apiUrl + city.trim() + `&appid=${apiKey}`)
     var data = await response.json()
 
     if (data.cod === '404') {
@@ -42,8 +42,6 @@ async function checkWeather(city) {
         document.querySelector('.min').innerHTML = Math.round(data.main.temp_min) + '°c';
         document.querySelector('.rise').innerHTML = sunriseTime;
         document.querySelector('.set').innerHTML = sunsetTime;
-
-
 
         const dateOne = new Date(data.dt * 1000);
         const hours = dateOne.getHours();

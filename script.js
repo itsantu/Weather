@@ -68,7 +68,7 @@ async function checkWeather(city) {
             }
         } else {
             // Night Case 
-            if (data.weather[0].main == 'Clouds') {
+            if (data.weather[0].main == 'Clouds' || data.weather[0].main == 'Haze') {
                 weatherIcon.src = 'images/cloudy-night.png'
             }
             else if (data.weather[0].main == 'Smoke') {

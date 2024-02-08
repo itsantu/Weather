@@ -6,16 +6,15 @@ const searchBtn = document.querySelector('.search-container button')
 const searhImg = document.querySelector('.search-container button img')
 const weatherIcon = document.querySelector('.weather-icon')
 
+//  WEATHER INFORMATION UPDATE
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
     var data = await response.json()
 
     if (data.cod === '404') {
-        // alert('Enter correct Cityname!')
         document.querySelector('.city').innerHTML = 'Enter a valid City!'
         return
     } else if (data.cod === '400') {
-        // alert('Enter a Cityname First!')
         document.querySelector('.city').innerHTML = 'Enter a Cityname first!'
         return
     } else {
@@ -44,7 +43,9 @@ async function checkWeather(city) {
         document.querySelector('.set').innerHTML = sunsetTime;
 
 
+        // WEATHER ICON PART
 
+        // Calculate time in 24 hours format and decide is it day or not
         const dateOne = new Date(data.dt * 1000);
         const hours = dateOne.getHours();
         console.log(hours)
@@ -70,7 +71,7 @@ async function checkWeather(city) {
             }
         } else {
             // Night Case 
-            if (data.weather[0].main == 'Clouds') {
+            if (data.weather[0].main == 'Clouds'|| data.weather[0].main == 'Haze') {
                 weatherIcon.src = 'images/cloudy-night.png'
             }
             else if (data.weather[0].main == 'Smoke') {
@@ -91,15 +92,35 @@ async function checkWeather(city) {
         }
     }
 }
-// To Display Default Data on first load
+// To Display Default Data based on "Kolkata" on first load
 checkWeather('kolkata')
 
-// 
+// Triggers on pressing "Enter"
 searchBox.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         checkWeather(searchBox.value);
     }
 });
+// Triggers on clicking the Button
 searchBtn.addEventListener('click', () => {
     checkWeather(searchBox.value)
+})
+
+
+
+// +++++++++    DARK MODE   ++++++++++ //
+
+checkbox.addEventListener("change", () => {
+    document.body.classList.toggle("dark")
+    document.getElementById("left").classList.toggle("dark")
+    document.getElementById("right").classList.toggle("dark")
+    document.querySelectorAll('.details-container').forEach((container) => {
+        container.classList.toggle("dark")
+    })
+    searchBox.classList.toggle("dark")
+    searchBtn.classList.toggle("dark")
+    document.querySelector('#right-header h2').classList.toggle("dark")
+    document.querySelectorAll('#right-footer p').forEach((pTag) => {
+        pTag.classList.toggle("dark")
+    })
 })

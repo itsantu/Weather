@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body,
 html {
     height: 100%;
@@ -10,99 +11,98 @@ html {
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
-    background-color: rgb(173, 173, 173);
+    background-color: rgb(163, 163, 163);
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color .5s ease-in-out;
 }
 
-#main{
-    width: 92%;
-    height: 90%;
-    border-bottom-right-radius: 40px;
-    border-top-left-radius: 40px;
+#main {
+    height: 95%;
+    width: 95%;
+    background-color: red;
     display: flex;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgb(66, 66, 66) 0px 20px 30px -10px;
 }
 
-#left{
+#left {
+    background-color: #fff;
     width: 35%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
     text-align: center;
-    padding: 20px 30px;
-    color: #3e3e3e;
+    color: black;
+    padding: 40px;
 }
 
-#right{
-    position: relative;
+#right {
     width: 65%;
-    height: 100%;
-    background-color: #efefef;
+    padding: 30px 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: center;     */
-    text-align: left;
-    /* gap: 20px;     */
+    background-color: #efefef;
 }
 
-/* Search Section  */
-.search-container{
+
+
+/*-----------------------THE LEFT PART--------------------------*/
+
+.search-container {
     width: 100%;
     display: flex;
-    margin: 10px auto 0;
     justify-content: space-between;
     align-items: center;
 }
 
-.search-container input{
+.search-container input {
     border: 0;
-    border-color: #edededd2;
+    border-color: #696969d2;
     outline: 0;
     padding: 8px 20px;
     border-radius: 30px;
     height: 55px;
-    flex: 1;    
-    margin-right: 16px;
+    flex: 1;
+    margin-right: 15px;
     font-size: 15px;
-    background-color: #dcdcdc;
+    background-color: #b3b3b3;
     transition: all 0.3s ease-in-out;
 }
-.search-container input:focus{
+
+.search-container input:focus {
     border: 1px solid #318CE7;
     box-shadow: #318ce788 0px 4px 15px;
 }
-.search-container button{
-    border: 0;
-    outline: 0;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    cursor: pointer;
-    background-color: #e1e1e1;   
+
+input::placeholder {
+    color: white;
 }
-.search-container img{
+
+.search-container button {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    background-color: #cecece;
+}
+
+.search-container button img {
     width: 20px;
 }
 
-.weather-icon{
-    margin-top: 20px;
-    width: 120px;
+.weather-icon {
+    width: 150px;
+    margin: 10px 0;
 }
 
-.temp{
+.temp {
     font-size: 90px;
     font-weight: 200;
 }
 
-.description{
-    font-weight: 500;
-}
-
-#left hr{
+#left hr {
     height: 2px;
     background-color: #bfbfbf;
     border: none;
@@ -110,96 +110,158 @@ html {
     margin: 20px 50px;
 }
 
-.city{
+.city {
     margin-top: 30px;
     font-size: 40px;
     font-weight: 400;
 }
 
 
-/*          RIGHT SECION        */
+/*-----------------------THE RIGHT PART--------------------------*/
 
-#right-middle{
-    height: 70%;
-    padding: 20px;
+#right-header {
+    height: 15%;
     display: flex;
-    justify-content: center;    
     align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/*      The Toggle Button     */
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+.checkbox-label {
+    background-color: #848484;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fa-moon {
+    color: #dcdcdc;
+}
+.fa-sun {
+    color: #ffbb77;
+}
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+.checkbox:checked+.checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+#right-middle {
+    height: 80%;
+    align-self: center;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-.details-container{
-    width: 30%;
-    height: 150px;
-    background: #318ce7;
-    padding: 20px 30px;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 15px;
-    transition: all ease .4s;
-}
-.details-container:hover{      
-    background: #3b9af8;  
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+/*+++++++++ Font section ++++++++++*/
+#right h2 {
+    font-size: 35px;
+    font-weight: 400;
+    color: #212121d8;
+    margin: 20px 0;
 }
 
-.details-container  p{
-    font-size: 16px;
+.details-container p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
-#right > h2,
-#right-footer  p{
+
+#right-footer p {
     color: #212121d8;
-}
-#right-footer  p{
     font-weight: 500;
 }
-#right > h2{
-    padding-left: 50px;
-    font-size: 40px;
-    font-weight: 400;
-}
 
-.details-container h3{
+.details-container h3 {
     margin-top: 15px;
     font-size: 30px;
     font-weight: 400;
 }
 
-.wind-direction{
-    margin-top: 8px;
+.details-container {
+    height: 160px;
+    max-height: 180px;
+    width: 30%;
+    background-color: #318ce7;
+    background: rgb(0, 210, 251);
+    background: linear-gradient(152deg, rgba(0, 210, 251, 1) 0%, rgb(7, 131, 255) 100%);
+    color: #fff;
+    padding: 20px 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 15px;
+    transition: all ease .4s;
 }
 
-.min-max-desc, .sun{
-    margin-top: 13px;
-}
-
-.min-max-desc p, .sun span{
-    margin-left: 10px;
-    font-weight: 500;
-}
-
-.min-max-desc{
-    margin-top: 20px;
+.min-max-desc {
     display: flex;
 }
-.min-max-desc p{
-    margin-left: 10px;
-}
-.min-max-desc img{
+
+.min-max-desc img,
+#right-footer a img {
+    height: 20px;
     width: 20px;
+    margin: 5px 10px;
 }
 
-#right-footer{
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    bottom: 20px;
+#right-footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#right-footer img{
-    width: 20px;
-    margin: 0 10px;
+
+
+/*----------------------------- Dark Section ----------------------------------*/
+body.dark {
+    background-color: #7e7e7e;
+}
+
+#left.dark {
+    background-color: #373737;
+    color: #ffffff;
+}
+
+#right.dark {
+    background-color: #585858;
+    color: white;
+}
+
+.search-container input.dark {
+    color: white;
+    background-color: #444444;
+}
+
+
+.search-container button.dark {
+    background-color: #444444;
+}
+
+.details-container.dark {
+    background: rgb(53, 53, 53);
+    background: linear-gradient(152deg, rgb(71, 71, 71) 0%, rgba(47, 47, 47, 1) 100%);
+}
+
+#right-header h2.dark,
+#right-footer p.dark {
+    color: white;
 }
